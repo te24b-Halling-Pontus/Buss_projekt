@@ -19,7 +19,7 @@ static void Meny(long[] platser) {
 }
 
 static void Bokning(long[] platser) {
-    boolean ledigPlats = Platser(platser);
+    boolean ledigPlats = LedigPlatser(platser);
     if (ledigPlats) {
         int val;
         while (true) {
@@ -46,7 +46,7 @@ static void Bokning(long[] platser) {
                 else{
                     IO.println("Platsen redan tagen du får välja en annan plats");
                     IO.println("De här platserna är lediga: ");
-                    Platser(platser);
+                    LedigPlatser(platser);
                 }
             }
         }
@@ -56,7 +56,24 @@ static void Bokning(long[] platser) {
     }
 }
 
-static boolean Platser(long[] platser) {
+static void Platser(long[] platser) {
+    
+}
+static void PersonnummerTillPlats(long[] platser){
+    long personnummer = StringToLong("Vad är ditt personnummer: ")
+    for (int index = 0; index < platser.length; index++) {
+        if (platser[index] == personnummer)
+        {
+            IO.println("Ja du har plats " + index + 1);
+        }
+        else 
+        {
+            IO.println("tyvärr Personnumret " + personnummer + " har ingen registrerad plats");
+        }
+    }
+    IO.readln("tryck enter för att fortsäta");
+}
+static boolean LedigPlatser(long[] platser){
     boolean ledigPlats = false;
     int platsNummer = 0;
     for (long plats : platser) {
@@ -69,9 +86,10 @@ static boolean Platser(long[] platser) {
     IO.println("är lediga");
     return ledigPlats;
 }
-
 static void Omsätning() {
-
+    for (int iterable_element : iterable) {
+        
+    }
 }
 
 static int StringToInt(String s_number) {
